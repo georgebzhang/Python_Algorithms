@@ -1,1 +1,1 @@
-wtf
+print("hi")
