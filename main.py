@@ -52,7 +52,40 @@ def bubble_sort(arr):
         ind_last_sorted -= 1
 
 
+def merge(arr, left, right):
+    ind_left = 0
+    ind_right = 0
+    ind_arr = 0
+    while ind_left < len(left) and ind_right < len(right):
+        if left[ind_left] < right[ind_right]:
+            arr[ind_arr] = left[ind_left]
+            ind_left += 1
+        else:
+            arr[ind_arr] = right[ind_right]
+            ind_right += 1
+        ind_arr += 1
+    while ind_left < len(left):
+        arr[ind_arr] = left[ind_left]
+        ind_left += 1
+        ind_arr += 1
+    while ind_right < len(right):
+        arr[ind_arr] = right[ind_right]
+        ind_right += 1
+        ind_arr += 1
+
+
+def merge_sort(arr):
+    if len(arr) < 2:
+        return
+    mid = len(arr)//2
+    left = arr[0:mid]
+    right = arr[mid:len(arr)]
+    merge_sort(left)
+    merge_sort(right)
+    merge(arr, left, right)
+
+
 test = [5, 1, 7, 2, 9, 3, 6]
 print_arr(test)
-insertion_sort(test)
+merge_sort(test)
 print_arr(test)
