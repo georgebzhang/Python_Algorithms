@@ -75,17 +75,32 @@ def merge(arr, left, right):
 
 
 def merge_sort(arr):
-    if len(arr) < 2:
+    size = len(arr)
+    if size < 2:
         return
-    mid = len(arr)//2
+    mid = size//2
     left = arr[0:mid]
-    right = arr[mid:len(arr)]
+    right = arr[mid:size]
     merge_sort(left)
     merge_sort(right)
     merge(arr, left, right)
 
 
+def partition(arr, ind_low, ind_high):
+    ind_pivot = ind_low
+    val_pivot = arr[ind_pivot]
+
+
+def quick_sort_helper(arr, ind_low, ind_high):
+    if ind_low < ind_high:
+
+
+
+def quick_sort(arr):
+    quick_sort_helper(arr, 0, len(arr)-1)
+
+
 test = [5, 1, 7, 2, 9, 3, 6]
 print_arr(test)
-merge_sort(test)
+quick_sort(test)
 print_arr(test)
