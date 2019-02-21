@@ -26,7 +26,19 @@ def selection_sort(arr):
         swap(arr, i, ind_min)
 
 
+def bubble_sort(arr):
+    ind_last_sorted = len(arr)
+    is_sorted = False
+    while not is_sorted:
+        is_sorted = True
+        for i in range(ind_last_sorted - 1):
+            if arr[i] > arr[i+1]:
+                swap(arr, i, i+1)
+                is_sorted = False
+        ind_last_sorted -= 1
+
+
 test = [5, 1, 7, 2, 9, 3, 6]
 print_arr(test)
-selection_sort(test)
+bubble_sort(test)
 print_arr(test)
