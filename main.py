@@ -102,14 +102,15 @@ def partition(arr, ind_low, ind_high):
     return ind_partition
 
 
-# def partition_rand(arr, ind_low, ind_high):
-#     ind_rand = random.randint(ind_low, ind_high+1)
-#     swap(arr, ind_low, )
+def partition_rand(arr, ind_low, ind_high):
+    ind_rand = random.randint(ind_low, ind_high+1)
+    swap(arr, ind_high, ind_rand)
+    return partition(arr, ind_low, ind_high)
 
 
 def quick_sort_helper(arr, ind_low, ind_high):
     if ind_low < ind_high:
-        ind_partition = partition(arr, ind_low, ind_high)
+        ind_partition = partition_rand(arr, ind_low, ind_high)
         quick_sort_helper(arr, ind_low, ind_partition-1)
         quick_sort_helper(arr, ind_partition+1, ind_high)
 
