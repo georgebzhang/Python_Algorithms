@@ -89,11 +89,19 @@ def merge_sort(arr):
 def partition(arr, ind_low, ind_high):
     ind_pivot = ind_low
     val_pivot = arr[ind_pivot]
+    ind_partition = ind_low
+    for i in range(ind_low, ind_high + 1):
+        if arr[i] < val_pivot:
+            swap(arr, ind_partition, i)
+            ind_partition += 1
+    return ind_partition
 
 
 def quick_sort_helper(arr, ind_low, ind_high):
     if ind_low < ind_high:
-
+        ind_partition = partition(arr, ind_low, ind_high)
+        quick_sort_helper(arr, ind_low, ind_partition-1)
+        quick_sort_helper(arr, ind_partition+1, ind_high)
 
 
 def quick_sort(arr):
