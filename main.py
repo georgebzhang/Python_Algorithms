@@ -26,6 +26,20 @@ def selection_sort(arr):
         swap(arr, i, ind_min)
 
 
+def insertion_sort(arr):
+    ind_last_sorted = 0
+    for i in range(1, len(arr)):
+        count = 0
+        for j in range(ind_last_sorted, -1, -1):
+            ind_new = i - (ind_last_sorted - j)
+            if arr[ind_new] < arr[j]:
+                swap(arr, ind_new, j)
+                count += 1
+            else:
+                continue
+        ind_last_sorted += 1
+
+
 def bubble_sort(arr):
     ind_last_sorted = len(arr)
     is_sorted = False
@@ -40,5 +54,5 @@ def bubble_sort(arr):
 
 test = [5, 1, 7, 2, 9, 3, 6]
 print_arr(test)
-bubble_sort(test)
+insertion_sort(test)
 print_arr(test)
