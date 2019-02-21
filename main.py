@@ -30,10 +30,10 @@ def insertion_sort(arr):
     ind_last_sorted = 0
     for i in range(1, len(arr)):
         count = 0
-        for j in range(ind_last_sorted, -1, -1):
+        for j in range(ind_last_sorted, -1, -1): # goes from ind_last_sorted -> 0
             ind_new = i - (ind_last_sorted - j)
             if arr[ind_new] < arr[j]:
-                swap(arr, ind_new, j)
+                swap(arr, j, ind_new)
                 count += 1
             else:
                 continue
