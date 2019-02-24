@@ -18,13 +18,13 @@ class ListStack(Stack):
 
     def pop(self):
         if self.empty():
-            print("Stack is empty")
+            raise Exception('Stack is empty')
         else:
             self.head = self.head.next
 
     def top(self):
         if self.empty():
-            print("Stack is empty")
+            raise Exception('Stack is empty')
         else:
             return self.head.data
 

@@ -14,13 +14,13 @@ class ArrayStack(Stack):
 
     def pop(self):
         if self.empty():
-            print("Stack is empty")
+            raise Exception('Stack is empty')
         else:
             self.length -= 1
 
     def top(self):
         if self.empty():
-            print("Stack is empty")
+            raise Exception('Stack is empty')
         else:
             return self.data[self.length - 1]
 
