@@ -1,6 +1,9 @@
 import random
 
+from ArrayStack import ArrayStack
+
 random.seed(69)
+
 
 def print_arr(arr):
     for i in range(len(arr)):
@@ -94,7 +97,7 @@ def partition(arr, ind_low, ind_high):
     ind_pivot = ind_high
     val_pivot = arr[ind_pivot]
     ind_partition = ind_low
-    for i in range(ind_low, ind_high): # from ind_low -> ind_high - 1 (don't want to reach ind_pivot = ind_high
+    for i in range(ind_low, ind_high): # from ind_low -> ind_high - 1 (don't want to reach ind_pivot = ind_high)
         if arr[i] < val_pivot:
             swap(arr, ind_partition, i)
             ind_partition += 1
@@ -103,8 +106,8 @@ def partition(arr, ind_low, ind_high):
 
 
 def partition_rand(arr, ind_low, ind_high):
-    ind_rand = random.randint(ind_low, ind_high+1)
-    swap(arr, ind_high, ind_rand)
+    ind_pivot = random.randint(ind_low, ind_high+1)
+    swap(arr, ind_high, ind_pivot)
     return partition(arr, ind_low, ind_high)
 
 
@@ -119,7 +122,20 @@ def quick_sort(arr):
     quick_sort_helper(arr, 0, len(arr)-1)
 
 
-test = [5, 27, 1, 7, -1, 2, 27, 9, 7, 3, 6]
-print_arr(test)
-quick_sort(test)
-print_arr(test)
+def sort_test():
+    test = [5, 27, 1, 7, -1, 2, 27, 9, 7, 3, 6]
+    print_arr(test)
+    quick_sort(test)
+    print_arr(test)
+
+
+s = ArrayStack()
+print(s.empty())
+s.top()
+s.pop()
+s.push(1)
+s.push(2)
+s.push(3)
+print(s.top())
+s.pop()
+print(s.top())
