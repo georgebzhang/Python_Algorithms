@@ -16,7 +16,7 @@ class ArrayStack(Stack):
         if self.empty():
             print("Stack is empty")
         else:
-            self.length -= 1;
+            self.length -= 1
 
     def top(self):
         if self.empty():

@@ -1,6 +1,7 @@
 import random
 
 from ArrayStack import ArrayStack
+from ListStack import ListStack
 
 random.seed(69)
 
@@ -130,6 +131,17 @@ def sort_test():
 
 
 s = ArrayStack()
+print(s.empty())
+s.top()
+s.pop()
+s.push(1)
+s.push(2)
+s.push(3)
+print(s.top())
+s.pop()
+print(s.top())
+
+s = ListStack()
 print(s.empty())
 s.top()
 s.pop()
