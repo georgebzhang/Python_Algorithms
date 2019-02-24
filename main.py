@@ -2,6 +2,8 @@ import random
 
 from ArrayStack import ArrayStack
 from ListStack import ListStack
+from ArrayQueue import ArrayQueue
+from ListQueue import ListQueue
 
 random.seed(69)
 
@@ -130,24 +132,60 @@ def sort_test():
     print_arr(test)
 
 
-s = ArrayStack()
-print(s.empty())
-s.top()
-s.pop()
-s.push(1)
-s.push(2)
-s.push(3)
-print(s.top())
-s.pop()
-print(s.top())
+def test_ArrayStack():
+    s = ArrayStack()
+    print(s.empty())
+    s.top()
+    s.pop()
+    s.push(1)
+    s.push(2)
+    s.push(3)
+    print(s.top())
+    s.pop()
+    print(s.top())
 
-s = ListStack()
-print(s.empty())
-s.top()
-s.pop()
-s.push(1)
-s.push(2)
-s.push(3)
-print(s.top())
-s.pop()
-print(s.top())
+
+def test_ListStack():
+    s = ListStack()
+    print(s.empty())
+    s.top()
+    s.pop()
+    s.push(1)
+    s.push(2)
+    s.push(3)
+    print(s.top())
+    s.pop()
+    print(s.top())
+
+
+def test_ArrayQueue():
+    s = ArrayQueue()
+    print(s.empty())
+    s.enqueue(1)
+    s.enqueue(2)
+    s.enqueue(3)
+    print(s.front())
+    s.dequeue()
+    print(s.front())
+    s.dequeue()
+    print(s.front())
+    s.dequeue()
+    print(s.front())
+
+
+def test_ListQueue():
+    s = ListQueue()
+    print(s.empty())
+    s.enqueue(1)
+    s.enqueue(2)
+    s.enqueue(3)
+    print(s.front())
+    s.dequeue()
+    print(s.front())
+    s.dequeue()
+    print(s.front())
+    s.dequeue()
+    print(s.front())
+
+
+test_ArrayQueue()
