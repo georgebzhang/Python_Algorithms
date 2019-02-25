@@ -159,16 +159,11 @@ def test_ListStack():
 def test_ArrayQueue():
     s = ArrayQueue()
     print(s.empty())
-    s.enqueue(1)
-    s.enqueue(2)
-    s.enqueue(3)
+    for i in range(33):
+        s.enqueue(i)
+        print('loop', i)
     print(s.front())
-    s.dequeue()
-    print(s.front())
-    s.dequeue()
-    print(s.front())
-    s.dequeue()
-    print(s.front())
+    s.print()
 
 
 def test_ListQueue():
@@ -201,4 +196,4 @@ def test_NodeList():
     s.print()
 
 
-test_ArrayStack()
+test_ArrayQueue()
