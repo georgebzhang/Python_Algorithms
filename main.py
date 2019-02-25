@@ -136,14 +136,11 @@ def sort_test():
 def test_ArrayStack():
     s = ArrayStack()
     print(s.empty())
-    s.top()
-    s.pop()
-    s.push(1)
-    s.push(2)
-    s.push(3)
+    for i in range(33):
+        s.push(i)
+        print('loop', i)
     print(s.top())
-    s.pop()
-    print(s.top())
+    s.print()
 
 
 def test_ListStack():
@@ -204,4 +201,4 @@ def test_NodeList():
     s.print()
 
 
-test_NodeList()
+test_ArrayStack()
