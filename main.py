@@ -4,6 +4,7 @@ from ArrayStack import ArrayStack
 from ListStack import ListStack
 from ArrayQueue import ArrayQueue
 from ListQueue import ListQueue
+from NodeList import NodeList
 
 random.seed(69)
 
@@ -188,4 +189,19 @@ def test_ListQueue():
     print(s.front())
 
 
-test_ArrayQueue()
+def test_NodeList():
+    s = NodeList()
+    print(s.empty())
+    s.insert(0, 69)
+    s.print()
+    s.insert_front(3)
+    s.insert_front(4)
+    s.insert_front(5)
+    s.insert_back(2)
+    s.insert_back(1)
+    s.print()
+    s.remove(3)
+    s.print()
+
+
+test_NodeList()
