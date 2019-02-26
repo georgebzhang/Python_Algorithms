@@ -5,6 +5,8 @@ from ListStack import ListStack
 from ArrayQueue import ArrayQueue
 from ListQueue import ListQueue
 from NodeList import NodeList
+from ArraySet import ArraySet
+from ListSet import ListSet
 
 random.seed(69)
 
@@ -196,4 +198,22 @@ def test_NodeList():
     s.print()
 
 
-test_ArrayQueue()
+def test_ArraySet():
+    s = ArraySet()
+    s.insert(1)
+    s.insert(2)
+    s.insert(3)
+    s.insert(2)
+    s.insert(1)
+    s.insert(4)
+    s.remove(1)
+    s.remove(0)
+    s.remove(3)
+    s.print()
+
+
+def test_ListSet():
+    pass
+
+
+test_ArraySet()
