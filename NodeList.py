@@ -13,9 +13,9 @@ class NodeList(List):
         self.tail = None
         self.length = 0
 
-    def insert_front(self, param1):
+    def insert_front(self, t):
         n = NodeList.Node()
-        n.data = param1
+        n.data = t
         if self.empty():
             self.head = n
             self.tail = n
@@ -25,9 +25,9 @@ class NodeList(List):
             self.head = n
         self.length += 1
 
-    def insert_back(self, param1):
+    def insert_back(self, t):
         n = NodeList.Node()
-        n.data = param1
+        n.data = t
         if self.empty():
             self.head = n
             self.tail = n
@@ -63,16 +63,16 @@ class NodeList(List):
             ptr = ptr.next
         return ptr
 
-    def insert(self, index, param1):
+    def insert(self, index, t):
         if index > self.length:
             raise Exception('Index exceeds length')
         if index == 0:
-            self.insert_front(param1)
+            self.insert_front(t)
         elif index == self.length:
-            self.insert_back(param1)
+            self.insert_back(t)
         else:
             n = NodeList.Node()
-            n.data = param1
+            n.data = t
             n_index = self.find(index)
             n_index.prev.next = n
             n.prev = n_index.prev

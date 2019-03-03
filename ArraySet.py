@@ -7,28 +7,28 @@ class ArraySet(Set):
         self.data = [0] * self.capacity
         self.length = 0
 
-    def insert(self, param1):
-        if self.has(param1):
+    def insert(self, t):
+        if self.has(t):
             return
-        self.data[self.length] = param1
+        self.data[self.length] = t
         self.length += 1
 
-    def find(self, param1):  # helper function for remove(...)
+    def find(self, t):  # helper function for remove(...)
         for i in range(self.length):
-            if param1 == self.data[i]:
+            if t == self.data[i]:
                 return i
         return -1
 
-    def remove(self, param1):
-        ind_t = self.find(param1)
+    def remove(self, t):
+        ind_t = self.find(t)
         if ind_t == -1:
             return
         for i in range(ind_t, self.length):
             self.data[i] = self.data[i + 1]
         self.length -= 1
 
-    def has(self, param1):
-        return self.find(param1) != -1
+    def has(self, t):
+        return self.find(t) != -1
 
     def print(self):
         for i in range(self.length):

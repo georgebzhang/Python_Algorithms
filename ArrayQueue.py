@@ -17,10 +17,10 @@ class ArrayQueue(Queue):
             data_new[i] = self.data[i]
         self.data = data_new
 
-    def enqueue(self, param1):
+    def enqueue(self, t):
         if self.length == self.capacity - 1:
             self.grow()
-        self.data[self.ind_back] = param1
+        self.data[self.ind_back] = t
         self.ind_back = (self.ind_back + 1) % self.capacity
         self.length += 1
 

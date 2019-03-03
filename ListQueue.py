@@ -12,9 +12,9 @@ class ListQueue(Queue):
         self.first = None
         self.last = None
 
-    def enqueue(self, param1):
+    def enqueue(self, t):
         n = ListQueue.Node()
-        n.data = param1
+        n.data = t
         if self.empty():
             self.first = n
             self.last = n

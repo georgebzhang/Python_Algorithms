@@ -10,9 +10,9 @@ class ListStack(Stack):
     def __init__(self):
         self.head = None
 
-    def push(self, param1):
+    def push(self, t):
         n = ListStack.Node()
-        n.data = param1
+        n.data = t
         n.next = self.head
         self.head = n
 

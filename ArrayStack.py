@@ -15,10 +15,10 @@ class ArrayStack(Stack):
             data_new[i] = self.data[i]
         self.data = data_new
 
-    def push(self, param1):
+    def push(self, t):
         if self.length == self.capacity:
             self.grow()
-        self.data[self.length] = param1
+        self.data[self.length] = t
         self.length += 1
 
     def pop(self):

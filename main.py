@@ -213,7 +213,14 @@ def test_ArraySet():
 
 
 def test_ListSet():
-    pass
+    s = ListSet()
+    s.insert(1)
+    s.insert(5)
+    s.insert(2)
+    s.remove(3)
+    s.remove(2)
+    s.print()
 
 
-test_ArraySet()
+if __name__ == '__main__':
+    test_ListSet()

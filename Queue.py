@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 class Queue(ABC):
     @abstractmethod
-    def enqueue(self, param1):
+    def enqueue(self, t):
         pass
 
     @abstractmethod

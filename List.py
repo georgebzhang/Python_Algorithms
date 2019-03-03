@@ -3,11 +3,11 @@ from abc import ABC, abstractmethod
 
 class List(ABC):
     @abstractmethod
-    def insert_front(self, param1):
+    def insert_front(self, t):
         pass
 
     @abstractmethod
-    def insert_back(self, param1):
+    def insert_back(self, t):
         pass
 
     @abstractmethod
@@ -19,7 +19,7 @@ class List(ABC):
         pass
 
     @abstractmethod
-    def insert(self, index, param1):
+    def insert(self, index, t):
         pass
 
     @abstractmethod
