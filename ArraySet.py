@@ -3,7 +3,7 @@ from Set import Set
 
 class ArraySet(Set):
     def __init__(self):
-        self.capacity = 100  # will implement amortized doubling later
+        self.capacity = 100  # TODO: implement amortized doubling
         self.data = [0] * self.capacity
         self.length = 0
 
