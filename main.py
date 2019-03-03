@@ -127,12 +127,25 @@ def quick_sort_helper(arr, ind_low, ind_high):
 def quick_sort(arr):
     quick_sort_helper(arr, 0, len(arr)-1)
 
+def binary_search(arr, val):
+    ind_left = 0
+    ind_right = len(arr) - 1
+    while (ind_left <= ind_right):
+        ind_mid = (ind_left + ind_right) // 2
+        if val > arr[ind_mid]:
+            ind_left = ind_mid + 1
+        elif val < arr[ind_mid]:
+            ind_right = ind_mid - 1
+        else:
+            return ind_mid
+    return -1
 
-def sort_test():
+def test_sort():
     test = [5, 27, 1, 7, -1, 2, 27, 9, 7, 3, 6]
     print_arr(test)
     quick_sort(test)
     print_arr(test)
+    print(binary_search(test, 5))
 
 
 def test_ArrayStack():
@@ -223,4 +236,4 @@ def test_ListSet():
 
 
 if __name__ == '__main__':
-    test_ListSet()
+    test_sort()
