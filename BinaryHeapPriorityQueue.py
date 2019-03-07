@@ -48,7 +48,7 @@ class BinaryHeapPriorityQueue(PriorityQueue):
     def remove(self):
         return_t = self.data[1]
         self.data[1] = self.data[len(self)]  # replace highest priority item with lowest priority item
-        self.data.pop()  # remove lowest priority item and reduces length
+        self.data.pop()  # remove lowest priority item and reduce length by 1
         self.percolate_down(1)
         return return_t
 
@@ -62,4 +62,3 @@ class BinaryHeapPriorityQueue(PriorityQueue):
         for i in range(1, len(self) + 1):
             print(self.data[i], " ", end="")
         print()
-
