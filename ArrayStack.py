@@ -2,11 +2,7 @@ from Stack import Stack
 
 
 class ArrayStack(Stack):
-    def __init__(self):
-        self.capacity = 2
-        self.data = [0] * self.capacity
-        self.length = 0
-
+    # "private" helper functions
     def grow(self):
         print('Growing array')
         self.capacity *= 2
@@ -14,6 +10,12 @@ class ArrayStack(Stack):
         for i in range(self.length):
             data_new[i] = self.data[i]
         self.data = data_new
+
+    # "public" functions
+    def __init__(self):
+        self.capacity = 2
+        self.data = [0] * self.capacity
+        self.length = 0
 
     def push(self, t):
         if self.length == self.capacity:

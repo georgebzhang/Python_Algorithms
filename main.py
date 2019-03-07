@@ -7,6 +7,8 @@ from ListQueue import ListQueue
 from NodeList import NodeList
 from ArraySet import ArraySet
 from ListSet import ListSet
+from ArrayOrderedSet import ArrayOrderedSet
+from ListOrderedSet import ListOrderedSet
 
 random.seed(69)
 
@@ -127,6 +129,7 @@ def quick_sort_helper(arr, ind_low, ind_high):
 def quick_sort(arr):
     quick_sort_helper(arr, 0, len(arr)-1)
 
+
 def binary_search(arr, val):
     ind_left = 0
     ind_right = len(arr) - 1
@@ -139,6 +142,7 @@ def binary_search(arr, val):
         else:
             return ind_mid
     return -1
+
 
 def test_sort():
     test = [5, 27, 1, 7, -1, 2, 27, 9, 7, 3, 6]
@@ -235,5 +239,20 @@ def test_ListSet():
     s.print()
 
 
+def test_ArrayOrderedSet():
+    s = ArrayOrderedSet()
+    s.insert(5)
+    s.insert(1)
+    s.insert(3)
+    s.insert(8)
+    s.insert(2)
+    s.remove(2)
+    s.print()
+
+
+def test_ListOrderedSet():
+    s = ListOrderedSet
+
+
 if __name__ == '__main__':
-    test_sort()
+    test_ArrayOrderedSet()
