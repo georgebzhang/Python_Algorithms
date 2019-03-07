@@ -2,7 +2,7 @@ from OrderedSet import OrderedSet
 
 
 class ListOrderedSet(OrderedSet):
-    # helper classes and functions
+    # "private" helper class and functions
     class Node:
         def __init__(self):
             self.data = None

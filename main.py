@@ -9,6 +9,7 @@ from ArraySet import ArraySet
 from ListSet import ListSet
 from ArrayOrderedSet import ArrayOrderedSet
 from ListOrderedSet import ListOrderedSet
+from BinaryHeapPriorityQueue import BinaryHeapPriorityQueue
 
 random.seed(69)
 
@@ -264,5 +265,18 @@ def test_ListOrderedSet():
     s.print()
 
 
+def test_BinaryHeapPriorityQueue():
+    s = BinaryHeapPriorityQueue()
+    print(s.empty())
+    s.insert(5)
+    s.insert(1)
+    s.insert(9)
+    s.insert(3)
+    s.insert(7)
+    s.insert(6)
+    s.remove()
+    s.print()
+
+
 if __name__ == '__main__':
-    test_ListOrderedSet()
+    test_BinaryHeapPriorityQueue()
