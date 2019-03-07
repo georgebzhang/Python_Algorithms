@@ -251,8 +251,18 @@ def test_ArrayOrderedSet():
 
 
 def test_ListOrderedSet():
-    s = ListOrderedSet
+    s = ListOrderedSet()
+    s.print()
+    s.insert(2)
+    s.insert(7)
+    s.insert(1)
+    s.insert(69)
+    s.insert(42)
+    s.insert(0)
+    s.insert(6)
+    s.insert(9)
+    s.print()
 
 
 if __name__ == '__main__':
-    test_ArrayOrderedSet()
+    test_ListOrderedSet()
