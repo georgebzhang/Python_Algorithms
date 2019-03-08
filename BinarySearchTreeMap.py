@@ -1,4 +1,5 @@
 from Map import Map
+from ArrayQueue import ArrayQueue  # for level order traversal
 
 
 class BinarySearchTreeMap(Map):
@@ -105,3 +106,14 @@ class BinarySearchTreeMap(Map):
     def print(self):
         self.print_inorder(self.root)
         print()
+
+    def print_tree(self):
+        q = ArrayQueue()
+        q.enqueue(self.root)
+        while not q.empty():
+            n = q.dequeue()
+            print('[k: ' + str(n.key) + ', v: ' + str(n.value) + ']')
+            if n.left is not None:
+                q.enqueue(n.left)
+            if n.right is not None:
+                q.enqueue(n.right)

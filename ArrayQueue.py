@@ -10,26 +10,29 @@ class ArrayQueue(Queue):
         self.length = 0
 
     def grow(self):
-        print('Growing array')
-        self.capacity *= 2
-        data_new = [0] * self.capacity
+        data_new = [0] * 2 * self.capacity
         for i in range(self.length):
-            data_new[i] = self.data[i]
+            data_new[i] = self.data[(self.ind_front + i) % self.capacity]
+        self.ind_front = 0
+        self.ind_back = self.capacity - 1
+        self.capacity *= 2
         self.data = data_new
 
     def enqueue(self, t):
-        if self.length == self.capacity - 1:
+        if self.length == self.capacity - 1:  # no - 1?
             self.grow()
         self.data[self.ind_back] = t
         self.ind_back = (self.ind_back + 1) % self.capacity
         self.length += 1
 
     def dequeue(self):
+        return_t = self.data[self.ind_front]
         if self.empty():
             raise Exception('Queue is empty')
         else:
             self.ind_front = (self.ind_front + 1) % self.capacity
         self.length -= 1
+        return return_t
 
     def front(self):
         if self.empty():
