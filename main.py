@@ -10,6 +10,7 @@ from ListSet import ListSet
 from ArrayOrderedSet import ArrayOrderedSet
 from ListOrderedSet import ListOrderedSet
 from BinaryHeapPriorityQueue import BinaryHeapPriorityQueue
+from BinarySearchTreeMap import BinarySearchTreeMap
 
 random.seed(69)
 
@@ -278,5 +279,20 @@ def test_BinaryHeapPriorityQueue():
     s.print()
 
 
+def test_BinarySearchTreeMap():
+    s = BinarySearchTreeMap()
+    s.insert(7, 5)
+    s.insert(1, 2)
+    s.insert(3, 4)
+    s.insert(9, 2)
+    s.insert(6, 1)
+    s.insert(4, 0)
+    s.insert(2, 3)
+    s.print()
+    s.remove(3)
+    s.remove(6)
+    s.print()
+
+
 if __name__ == '__main__':
-    test_BinaryHeapPriorityQueue()
+    test_BinarySearchTreeMap()
